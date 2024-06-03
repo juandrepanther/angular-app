@@ -8,3 +8,5 @@
 - Angular Material UI together with Scissors
 - TS Generics
 - angular linter
+- list items using @If decorator
+- \*ngIf from CommonModule used for if no data is fetched
