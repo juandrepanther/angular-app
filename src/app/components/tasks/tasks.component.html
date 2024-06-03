@@ -1,0 +1,28 @@
+<h2>Products</h2>
+<button mat-raised-button color="primary" (click)="fetchData()">Fetch Data</button>
+
+@if (data) {
+<div class="card-container">
+  <mat-card class="example-card" *ngFor="let item of data">
+    <mat-card-header>
+      <mat-card-title>{{ item.title }}</mat-card-title>
+      <mat-card-subtitle>{{ item.category }}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="image-container">
+      <img mat-card-image src="{{ item.image }}" alt="Photo of a Shiba Inu" />
+    </div>
+    <mat-card-content>
+      <p class="card-description">
+        {{ item.description }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button>Add</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+}
+
+<div *ngIf="!data">Loading...</div>
+
+<!-- <router-outlet></router-outlet> -->
