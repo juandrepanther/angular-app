@@ -1,8 +1,8 @@
-# Angular 18 + Angular Material UI / SCSS
+# Angular 18 + Angular Material UI / SCSS / Tailwind CSS
 
 ## Topics
 
-- routing
+- routing (redirect commented)
 - fetch data on the initial component load
 - environments
 - Angular Material UI together with Scissors

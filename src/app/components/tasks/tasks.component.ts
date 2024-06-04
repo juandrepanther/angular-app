@@ -13,7 +13,6 @@ import { DetailsComponent } from '../details/details.component'
   standalone: true,
   imports: [CommonModule, MatButtonModule, MatCardModule, RouterOutlet, DetailsComponent],
   templateUrl: './tasks.component.html',
-  styleUrl: './tasks.component.scss',
 })
 export class TasksComponent<T extends Product> {
   httpClient = inject(HttpClient)

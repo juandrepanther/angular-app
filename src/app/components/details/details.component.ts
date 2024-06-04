@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common'
   standalone: true,
   imports: [MatButtonModule, MatCardModule, CommonModule],
   templateUrl: './details.component.html',
-  styleUrl: './details.component.scss',
 })
 export class DetailsComponent {
   @Input() product!: Product

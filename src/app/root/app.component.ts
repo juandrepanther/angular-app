@@ -8,6 +8,5 @@ import { TasksComponent } from 'app/components/tasks/tasks.component'
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, TasksComponent],
   templateUrl: '../root/app.component.html',
-  styleUrl: '../root/app.component.scss',
 })
 export class AppComponent {}
