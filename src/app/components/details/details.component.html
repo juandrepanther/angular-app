@@ -1,0 +1,10 @@
+<mat-card-actions>
+  <button mat-raised-button color="primary" (click)="toggleDetails()">
+    {{ showDetails ? 'Hide Details' : 'Show Details' }}
+  </button>
+</mat-card-actions>
+<mat-card-content *ngIf="showDetails">
+  <p class="card-description">
+    {{ product.description }}
+  </p>
+</mat-card-content>

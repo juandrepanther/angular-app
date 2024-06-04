@@ -6,11 +6,12 @@ import { MatCardModule } from '@angular/material/card'
 import { RouterOutlet } from '@angular/router'
 import { Product } from 'types'
 import { environment } from 'environments/environment.development'
+import { DetailsComponent } from '../details/details.component'
 
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatCardModule, RouterOutlet],
+  imports: [CommonModule, MatButtonModule, MatCardModule, RouterOutlet, DetailsComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.scss',
 })

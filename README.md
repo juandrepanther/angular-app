@@ -9,4 +9,6 @@
 - TS Generics
 - angular linter
 - list items using @If decorator
-- \*ngIf from CommonModule used for if no data is fetched
+- \*ngIf, \*ngFor from CommonModule used for if no data is fetched
+- pipes
+- @Input to pass properties from parent to child component

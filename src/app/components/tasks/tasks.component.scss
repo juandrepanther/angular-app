@@ -1,5 +1,5 @@
 .example-card {
-  max-width: 400px;
+  width: 350px;
 
   .image-container {
     height: 200px;
@@ -16,6 +16,10 @@
 
   .card-description {
     font-size: smaller;
+  }
+
+  .card-price {
+    text-align: center;
   }
 }
 
