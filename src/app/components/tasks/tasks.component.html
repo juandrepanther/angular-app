@@ -1,9 +1,9 @@
-<section class="container page">
+<section class="container md:mx-auto my-16">
   <h2>Products</h2>
   <button mat-raised-button color="primary" (click)="fetchData()">Manual Fetch Data</button>
 
   @if (data) {
-  <div class="flex justify-between flex-wrap gap-4 mt-5">
+  <div class="flex justify-center md:justify-between flex-wrap gap-4 mt-5">
     <mat-card class="w-[350px] p-2" *ngFor="let item of data; let i = index">
       <mat-card-header>
         <mat-card-title>{{ item.title }}</mat-card-title>
