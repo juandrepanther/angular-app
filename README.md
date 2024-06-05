@@ -17,3 +17,5 @@
 - pipes
 - `@Input` to pass properties from parent to child component
 - functions import to the component
+
+- generated service by using `ng generate service service/products`

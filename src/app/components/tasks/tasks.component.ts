@@ -5,8 +5,8 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card'
 import { RouterOutlet } from '@angular/router'
 import { Product } from 'types'
-import { environment } from 'environments/environment.development'
 import { DetailsComponent } from '../details/details.component'
+import { ProductsService } from 'app/service/products.service'
 
 @Component({
   selector: 'app-tasks',
@@ -14,18 +14,14 @@ import { DetailsComponent } from '../details/details.component'
   imports: [CommonModule, MatButtonModule, MatCardModule, RouterOutlet, DetailsComponent],
   templateUrl: './tasks.component.html',
 })
-export class TasksComponent<T extends Product> {
-  httpClient = inject(HttpClient)
-  data: T[] = []
+export class TasksComponent {
+  constructor(private productService: ProductsService) {}
+
+  data: Product[] = []
 
   ngOnInit(): void {
-    this.fetchData()
-  }
-
-  fetchData() {
-    this.httpClient.get<T[]>(environment.FAKE_API_URL).subscribe((data) => {
+    this.productService.getProducts().subscribe((data) => {
       this.data = data
-      console.log(data)
     })
   }
 }
