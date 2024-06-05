@@ -1,9 +1,9 @@
 <section class="container md:mx-auto my-16">
   <h2>Products</h2>
 
-  @if (data) {
+  @if (data$) {
   <div class="flex justify-center md:justify-between flex-wrap gap-4 mt-5">
-    <mat-card class="w-[350px] h-[470px] p-2" *ngFor="let item of data; let i = index">
+    <mat-card class="w-[350px] h-[470px] p-2" *ngFor="let item of data$ | async; let i = index">
       <mat-card-header>
         <mat-card-title>{{ item.title }}</mat-card-title>
         <mat-card-subtitle>{{ item.category }}</mat-card-subtitle>
@@ -21,5 +21,5 @@
   </div>
   }
 
-  <div *ngIf="!data">Loading...</div>
+  <div *ngIf="!data$">Loading...</div>
 </section>

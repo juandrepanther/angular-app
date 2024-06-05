@@ -19,3 +19,10 @@
 - functions import to the component
 
 - generated service by using `ng generate service service/products`
+- refactored and used pipe async and streams
+- error handler service & component
+- parameters in the products service
+
+## Notes
+
+- to generate new components and skipping the tests, run `ng g c components/global-error --skip-tests`
