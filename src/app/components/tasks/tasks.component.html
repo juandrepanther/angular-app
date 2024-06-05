@@ -4,7 +4,7 @@
 
   @if (data) {
   <div class="flex justify-center md:justify-between flex-wrap gap-4 mt-5">
-    <mat-card class="w-[350px] p-2" *ngFor="let item of data; let i = index">
+    <mat-card class="w-[350px] h-[470px] p-2" *ngFor="let item of data; let i = index">
       <mat-card-header>
         <mat-card-title>{{ item.title }}</mat-card-title>
         <mat-card-subtitle>{{ item.category }}</mat-card-subtitle>
@@ -13,7 +13,6 @@
         <img src="{{ item.image }}" alt="{{ item.title }}" class="w-auto h-full object-cover" />
       </div>
       <p class="card-price text-center py-2">Price: {{ item.price | currency : 'EUR' }}</p>
-
       <app-details [product]="item"></app-details>
 
       <mat-card-actions>

@@ -25,6 +25,7 @@ export class TasksComponent<T extends Product> {
   fetchData() {
     this.httpClient.get<T[]>(environment.FAKE_API_URL).subscribe((data) => {
       this.data = data
+      console.log(data)
     })
   }
 }

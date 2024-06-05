@@ -1,10 +1,8 @@
-<mat-card-actions>
-  <button mat-raised-button color="primary" (click)="toggleDetails()">
-    {{ showDetails ? 'Hide Details' : 'Show Details' }}
-  </button>
-</mat-card-actions>
-<mat-card-content *ngIf="showDetails">
-  <p>
-    {{ product.description }}
-  </p>
-</mat-card-content>
+<button mat-raised-button color="primary" (click)="toggleDetails()">
+  {{ showDetails ? 'Hide Details' : 'Show Details' }}
+</button>
+
+<article *ngIf="showDetails">
+  <p>{{ truncateString(product.description) }}</p>
+  <p>Rating: {{ product.rating.rate | number : '1.2-4' }}</p>
+</article>

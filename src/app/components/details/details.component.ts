@@ -3,6 +3,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card'
 import { Product } from 'types'
 import { CommonModule } from '@angular/common'
+import { truncateString } from 'lib/utils'
 
 @Component({
   selector: 'app-details',
@@ -18,4 +19,6 @@ export class DetailsComponent {
   toggleDetails() {
     this.showDetails = !this.showDetails
   }
+
+  truncateString = truncateString
 }
