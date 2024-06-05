@@ -20,6 +20,7 @@ export class ProductsService {
       .pipe(catchError(this.errorHandler.bind(this)), retry(2))
   }
 
+  // method is connected with common error service below
   private errorHandler(error: HttpErrorResponse) {
     this.errorService.handle(error.message)
     return throwError(() => new Error(error.message))

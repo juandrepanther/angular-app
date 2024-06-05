@@ -1,3 +1,5 @@
+<!-- with *ngIf we use pipe as variable for the stream data and use it in the DOM as error message -->
+
 <div
   *ngIf="errorService.error$ | async as error"
   class="z-10 fixed bottom-0 left-0 w-full bg-red-500/70 p-4 text-center text-slate-200 backdrop-blur-sm drop-shadow-md"
