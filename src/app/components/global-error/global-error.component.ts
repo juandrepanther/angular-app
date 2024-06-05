@@ -10,5 +10,6 @@ import { AsyncPipe, CommonModule } from '@angular/common'
 })
 export class GlobalErrorComponent {
   // we connect error service here in case of visualizing the error in the DOM with *ngIf
+  // this service must be as public in order to use it globally
   constructor(public errorService: ErrorService) {}
 }

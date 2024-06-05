@@ -26,3 +26,4 @@
 ## Notes
 
 - to generate new components and skipping the tests, run `ng g c components/global-error --skip-tests`
+- error service holds all errors from the other components connected in their methods
