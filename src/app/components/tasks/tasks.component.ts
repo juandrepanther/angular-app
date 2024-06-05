@@ -29,4 +29,8 @@ export class TasksComponent {
   data$: Observable<Product[]>
 
   search = ''
+
+  goToHome() {
+    window.location.href = '/'
+  }
 }
