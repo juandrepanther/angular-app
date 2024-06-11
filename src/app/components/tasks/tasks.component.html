@@ -1,40 +1,39 @@
-<section class="container md:mx-auto my-16">
+<section class="container my-16 md:mx-auto">
   <h2>Products</h2>
 
   <button (click)="goToHome()" class="my-4" mat-raised-button>Go to products</button>
 
   <input
     type="text"
-    class="mb-2, border, py-2 px-4 w-full border-gray-500 rounded-xl shadow-md"
+    class="mb-2, border, w-full rounded-xl border-gray-500 px-4 py-2 shadow-md"
     placeholder="Search..."
     [(ngModel)]="search"
   />
 
   @if (data$) {
-  <div
-    *ngIf="data$ | async as products"
-    class="flex justify-center md:justify-between flex-wrap gap-4 mt-5"
-  >
     <div
-      class="w-[350px] min-h-[470px] p-4 rounded-2xl border border-gray-300 shadow-md text-center bg-slate-50"
-      *ngFor="let item of products | searchProducts : search; let i = index"
+      *ngIf="data$ | async as products"
+      class="mt-5 flex flex-wrap justify-center gap-4 md:justify-between"
     >
-      <div>
-        <h6>{{ item.title }}</h6>
-        <p>Category: {{ item.category }}</p>
-      </div>
-      <div class="h-[200px] overflow-hidden flex justify-center m-1">
-        <img src="{{ item.image }}" alt="{{ item.title }}" class="w-auto h-full object-cover" />
-      </div>
-      <p class="card-price text-center py-2">Price: {{ item.price | currency : 'EUR' }}</p>
-      <app-details [product]="item"></app-details>
+      <div
+        class="min-h-[470px] w-[350px] rounded-2xl border border-gray-300 bg-slate-50 p-4 text-center shadow-md"
+        *ngFor="let item of products | searchProducts: search; let i = index"
+      >
+        <div>
+          <h6>{{ item.title }}</h6>
+          <p>Category: {{ item.category }}</p>
+        </div>
+        <div class="m-1 flex h-[200px] justify-center overflow-hidden">
+          <img src="{{ item.image }}" alt="{{ item.title }}" class="h-full w-auto object-cover" />
+        </div>
+        <p class="card-price py-2 text-center">Price: {{ item.price | currency: 'EUR' }}</p>
+        <app-details [product]="item"></app-details>
 
-      <div>
-        <button class="my-4" mat-raised-button>Add</button>
+        <div>
+          <button class="my-4" mat-raised-button>Add</button>
+        </div>
       </div>
     </div>
-  </div>
-
   }
 
   <div *ngIf="!data$">Loading...</div>
