@@ -23,6 +23,8 @@
 - error handler service & component
 - parameters in the products service
 
+- `<ng-content></ng-content>` as children
+
 ## Notes
 
 - to generate new components and skipping the tests, run `ng g c components/global-error --skip-tests`
