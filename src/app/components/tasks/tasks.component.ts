@@ -8,6 +8,7 @@ import { DetailsComponent } from '../details/details.component'
 import { ProductsService } from 'app/service/products.service'
 import { Observable } from 'rxjs'
 import { SearchProductsPipe } from 'app/pipes/search-products.pipe'
+import { ModalService } from 'app/service/modal.service'
 
 @Component({
   selector: 'app-tasks',
@@ -23,7 +24,10 @@ import { SearchProductsPipe } from 'app/pipes/search-products.pipe'
   templateUrl: './tasks.component.html',
 })
 export class TasksComponent {
-  constructor(private productService: ProductsService) {
+  constructor(
+    private productService: ProductsService,
+    public modalService: ModalService,
+  ) {
     this.data$ = this.productService.getProducts()
   }
   data$: Observable<Product[]>

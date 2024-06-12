@@ -1,9 +1,20 @@
-<div class="fixed left-0 top-0 z-10 h-full w-full bg-black/50 backdrop-blur">
+<div
+  (click)="modalService.close()"
+  *ngIf="modalService.isVisible$ | async"
+  class="fixed left-0 top-0 z-10 h-full w-full bg-black/50 backdrop-blur"
+>
   <div
     class="absolute left-1/2 top-1/2 z-20 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-md bg-white shadow-md"
   >
     <h3 class="w-full py-4 text-center">{{ title | titlecase }}</h3>
 
     <ng-content></ng-content>
+    <mat-icon
+      (click)="modalService.close()"
+      class="absolute right-4 top-4 cursor-pointer"
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="close"
+    ></mat-icon>
   </div>
 </div>
