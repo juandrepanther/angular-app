@@ -1,5 +1,9 @@
 # Angular 18 + Angular Material UI / SCSS / Tailwind CSS
 
+## Build
+
+Already build on Vercel: `https://angular-app-taupe.vercel.app/`
+
 ## Run
 
 - `npm run dev`
