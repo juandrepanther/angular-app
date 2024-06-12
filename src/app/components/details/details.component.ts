@@ -1,9 +1,9 @@
-import { Component, Input } from '@angular/core'
+import { Component, input } from '@angular/core'
 import { MatButtonModule } from '@angular/material/button'
 import { MatCardModule } from '@angular/material/card'
 import { Product } from 'types'
 import { CommonModule } from '@angular/common'
-import { truncateString } from 'lib/utils'
+import { emptyProduct, truncateString } from 'lib/utils'
 
 @Component({
   selector: 'app-details',
@@ -12,7 +12,7 @@ import { truncateString } from 'lib/utils'
   templateUrl: './details.component.html',
 })
 export class DetailsComponent {
-  @Input() product!: Product
+  product = input<Product>(emptyProduct)
 
   showDetails = false
 

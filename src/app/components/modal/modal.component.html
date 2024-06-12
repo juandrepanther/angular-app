@@ -11,7 +11,7 @@
     tabindex="0"
     class="absolute left-1/2 top-1/2 z-20 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-md bg-white shadow-md"
   >
-    <h3 class="w-full py-4 text-center">{{ title | titlecase }}</h3>
+    <h3 class="w-full py-4 text-center">{{ title() | titlecase }}</h3>
 
     <ng-content></ng-content>
     <mat-icon

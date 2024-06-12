@@ -1,5 +1,5 @@
 import { CommonModule, TitleCasePipe } from '@angular/common'
-import { Component, Input } from '@angular/core'
+import { Component, input } from '@angular/core'
 import { ModalService } from 'app/service/modal.service'
 import { MatIconModule } from '@angular/material/icon'
 
@@ -11,5 +11,6 @@ import { MatIconModule } from '@angular/material/icon'
 })
 export class ModalComponent {
   constructor(public modalService: ModalService) {}
-  @Input() title!: string
+
+  title = input<string>()
 }

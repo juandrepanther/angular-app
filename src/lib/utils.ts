@@ -5,3 +5,13 @@ export function truncateString(str: string): string {
     return str.slice(0, 120) + '...'
   }
 }
+
+export const emptyProduct = {
+  id: 0,
+  title: '',
+  price: 0,
+  description: '',
+  category: '',
+  image: '',
+  rating: { rate: 0, count: 0 },
+}

@@ -3,6 +3,6 @@
 </button>
 
 <article *ngIf="showDetails">
-  <p>{{ truncateString(product.description) }}</p>
-  <p>Rating: {{ product.rating.rate | number : '1.2-4' }}</p>
+  <p>{{ truncateString(product().description) }}</p>
+  <p>Rating: {{ product().rating.rate | number: '1.2-4' }}</p>
 </article>

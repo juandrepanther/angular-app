@@ -28,6 +28,7 @@ Already build on Vercel: `https://angular-app-taupe.vercel.app/`
 - parameters in the products service
 
 - `<ng-content></ng-content>` as children
+- used `signals` instead of `@Input`
 
 ## Notes
 
