@@ -4,6 +4,7 @@
     type="text"
     placeholder="New name"
     formControlName="name"
+    appFocus
   />
 
   <p *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="my-4 text-red-500">
