@@ -5,5 +5,10 @@
     placeholder="New name"
     formControlName="name"
   />
+
+  <p *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="my-4 text-red-500">
+    Name must be at least 3 characters long. Now {{ form.get('name')?.value?.length }}
+  </p>
+
   <button (click)="submit()" class="my-4" mat-raised-button text="Create">Create</button>
 </form>
