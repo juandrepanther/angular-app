@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, ElementRef, OnInit } from '@angular/core'
+import { Directive, ElementRef, OnInit } from '@angular/core'
 
 // just simply add this directive appFocus to the element you want to focus by default
 
@@ -6,13 +6,11 @@ import { AfterViewInit, Directive, ElementRef, OnInit } from '@angular/core'
   selector: '[appFocus]',
   standalone: true,
 })
-export class FocusDirective implements OnInit, AfterViewInit {
+export class FocusDirective implements OnInit {
   constructor(private el: ElementRef) {}
 
   ngOnInit(): void {
     // we can control the focus here
     this.el.nativeElement.focus()
   }
-
-  ngAfterViewInit(): void {}
 }

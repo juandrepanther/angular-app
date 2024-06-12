@@ -10,13 +10,22 @@ import { ErrorService } from './error.service'
 })
 export class ProductsService {
   // other services can be connected via constructor as below
-  constructor(private http: HttpClient, private errorService: ErrorService) {}
+  constructor(
+    private http: HttpClient,
+    private errorService: ErrorService,
+  ) {}
 
   getProducts(): Observable<Product[]> {
     return this.http
       .get<Product[]>(environment.FAKE_API_URL, {
         params: new HttpParams({ fromObject: { limit: 14 } }),
       })
+      .pipe(catchError(this.errorHandler.bind(this)), retry(2))
+  }
+
+  createProducts(product: Product): Observable<Product> {
+    return this.http
+      .post<Product>(environment.FAKE_API_URL, product)
       .pipe(catchError(this.errorHandler.bind(this)), retry(2))
   }
 
