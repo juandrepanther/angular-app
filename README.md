@@ -10,7 +10,7 @@ Already build on Vercel: `https://angular-app-taupe.vercel.app/`
 
 ## Topics
 
-- routing (redirect commented)
+- routing
 - fetch data on the initial component load
 - environments
 - Angular Material UI together with SCSS

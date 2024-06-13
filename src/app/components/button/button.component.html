@@ -1,3 +1,19 @@
-<button type="button" class="btn btn-primary" (click)="onClick()">
-  {{ text }}
-</button>
+@switch (style()) {
+  @case ('mat-flat-button') {
+    <button class="m-4" type="button" mat-flat-button (click)="onClick()">
+      {{ text() }}
+    </button>
+  }
+
+  @case ('mat-raised-button') {
+    <button class="m-4" type="button" mat-raised-button (click)="onClick()">
+      {{ text() }}
+    </button>
+  }
+
+  @case ('mat-stroked-button') {
+    <button class="m-4" type="button" mat-stroked-button (click)="onClick()">
+      {{ text() }}
+    </button>
+  }
+}

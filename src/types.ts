@@ -12,3 +12,5 @@ export interface Product {
   image: string
   rating: Rating
 }
+
+export type BtnTypes = 'mat-flat-button' | 'mat-raised-button' | 'mat-stroked-button'
