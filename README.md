@@ -17,6 +17,7 @@ Already build on Vercel: `https://angular-app-taupe.vercel.app/`
 - TS Generics
 - angular linter
 - list items using `@If` decorator
+- case decorator `@Switch`
 - `\*ngIf`, `\*ngFor` from `CommonModule` used for if no data is fetched
 - pipes
 - `@Input` to pass properties from parent to child component
