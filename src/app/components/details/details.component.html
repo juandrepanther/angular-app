@@ -1,6 +1,9 @@
-<button mat-raised-button color="primary" (click)="toggleDetails()">
-  {{ showDetails ? 'Hide Details' : 'Show Details' }}
-</button>
+<app-button
+  text="{{ showDetails ? 'Hide Details' : 'Show Details' }}"
+  [style]="'mat-raised-button'"
+  (click)="toggleDetails()"
+>
+</app-button>
 
 <article *ngIf="showDetails">
   <p>{{ truncateString(product().description) }}</p>

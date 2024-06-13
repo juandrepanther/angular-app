@@ -1,9 +1,8 @@
 <section class="container my-16 md:mx-auto">
   <h2>Products</h2>
 
-  <button (click)="goToHome()" class="my-4" mat-raised-button>Go to products</button>
-
-  <button (click)="modalService.open()" class="mx-4 my-4" mat-flat-button>Create product</button>
+  <app-button text="Go Home" [style]="'mat-raised-button'" [goTo]="'/'"></app-button>
+  <app-button text="Create" [style]="'mat-flat-button'" (click)="modalService.open()"></app-button>
 
   <input
     type="text"
@@ -32,7 +31,7 @@
         <app-details [product]="item"></app-details>
 
         <div>
-          <button class="my-4" mat-raised-button>Add</button>
+          <app-button text="Add" [style]="'mat-raised-button'"></app-button>
         </div>
       </div>
     </div>

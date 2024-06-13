@@ -16,7 +16,9 @@ export class ButtonComponent {
 
   buttonClick = output()
 
-  onClick() {
-    this.buttonClick.emit()
+  handler() {
+    this.goTo()
+      ? (window.location.href = this.goTo() as unknown as string)
+      : this.buttonClick.emit()
   }
 }

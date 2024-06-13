@@ -16,7 +16,7 @@ Already build on Vercel: `https://angular-app-taupe.vercel.app/`
 - Angular Material UI together with SCSS
 - TS Generics
 - angular linter
-- list items using `@If` decorator
+- list items using `@If`, `@Else` decorator
 - case decorator `@Switch`
 - `\*ngIf`, `\*ngFor` from `CommonModule` used for if no data is fetched
 - pipes
