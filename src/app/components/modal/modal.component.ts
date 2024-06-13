@@ -1,5 +1,5 @@
 import { CommonModule, TitleCasePipe } from '@angular/common'
-import { Component, input } from '@angular/core'
+import { Component, inject, input } from '@angular/core'
 import { ModalService } from 'app/service/modal.service'
 import { MatIconModule } from '@angular/material/icon'
 
@@ -10,7 +10,13 @@ import { MatIconModule } from '@angular/material/icon'
   templateUrl: './modal.component.html',
 })
 export class ModalComponent {
-  constructor(public modalService: ModalService) {}
+  modalService = inject(ModalService)
 
   title = input<string>()
+
+  handleKeydownEvent(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      this.modalService.close()
+    }
+  }
 }

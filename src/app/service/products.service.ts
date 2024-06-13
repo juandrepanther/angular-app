@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http'
-import { Injectable } from '@angular/core'
+import { Injectable, inject } from '@angular/core'
 import { environment } from 'environments/environment.development'
 import { Observable, catchError, retry, throwError } from 'rxjs'
 import { Product } from 'types'
@@ -9,11 +9,9 @@ import { ErrorService } from './error.service'
   providedIn: 'root',
 })
 export class ProductsService {
-  // other services can be connected via constructor as below
-  constructor(
-    private http: HttpClient,
-    private errorService: ErrorService,
-  ) {}
+  // other services can be connected via inject as below
+  http = inject(HttpClient)
+  errorService = inject(ErrorService)
 
   getProducts(): Observable<Product[]> {
     return this.http

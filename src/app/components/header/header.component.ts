@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import { Router, RouterLink, RouterOutlet } from '@angular/router'
 
 @Component({
@@ -8,5 +8,5 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router'
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
-  constructor(public router: Router) {}
+  router = inject(Router)
 }

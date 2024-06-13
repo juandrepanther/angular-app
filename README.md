@@ -30,6 +30,7 @@ Already build on Vercel: `https://angular-app-taupe.vercel.app/`
 
 - `<ng-content></ng-content>` as children
 - used `signals` instead of `@Input`
+- used `inject` instead of injecting them in the constructor
 
 ## Notes
 
