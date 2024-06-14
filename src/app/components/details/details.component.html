@@ -5,7 +5,7 @@
 >
 </app-button>
 
-<article *ngIf="showDetails">
+<article *ngIf="showDetails" [@fadeAnimation]="showDetails ? 'fadeIn' : 'fadeOut'">
   <p>{{ truncateString(product().description) }}</p>
   <p>Rating: {{ product().rating.rate | number: '1.2-4' }}</p>
 </article>
