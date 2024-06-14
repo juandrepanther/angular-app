@@ -1,11 +1,16 @@
 <header
   class="fixed left-0 top-0 z-10 flex h-16 w-full flex-row-reverse items-center border-b border-gray-300 bg-white/80 drop-shadow-md backdrop-blur-sm"
 >
-  @if (router.url !== '/login') {
-    <span class="m-0 cursor-pointer px-4" routerLink="/login">Login</span>
-  } @else {
-    <span class="m-0 cursor-pointer px-4" routerLink="/">Home</span>
-  }
+  <div
+    class="mx-4 w-20 rounded-md bg-blue-200 py-1 text-center text-white"
+    [@openClose]="router.url === '/login' ? 'login' : 'home'"
+  >
+    @if (router.url !== '/login') {
+      <span class="m-0 cursor-pointer select-none px-4" routerLink="/login">Login</span>
+    } @else {
+      <span class="m-0 cursor-pointer select-none px-4" routerLink="/">Home</span>
+    }
+  </div>
 </header>
 
 <router-outlet></router-outlet>
