@@ -5,6 +5,7 @@ import { User, UserRegisterResponse, UserType } from 'types'
 import { environment } from 'environments/environment.development'
 import { catchError, retry, tap, throwError } from 'rxjs'
 import { getToken, storeToken } from 'lib/utils'
+import { SuccessService } from './success.service'
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,7 @@ import { getToken, storeToken } from 'lib/utils'
 export class AuthService {
   http = inject(HttpClient)
   errorService = inject(ErrorService)
+  successService = inject(SuccessService)
 
   register({ email, password, username }: User) {
     return this.http
@@ -42,6 +44,7 @@ export class AuthService {
       .pipe(
         tap((response) => {
           console.log(response, 'Logged successfully')
+          this.successService.setSuccessStatus(true)
         }),
         catchError(this.errorHandler.bind(this)),
       )

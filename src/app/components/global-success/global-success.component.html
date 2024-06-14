@@ -1,0 +1,13 @@
+<div
+  *ngIf="successService.successStatus"
+  class="fixed bottom-0 left-0 z-10 w-full bg-green-500/70 p-4 text-center text-slate-200 drop-shadow-md backdrop-blur-sm"
+>
+  Success
+
+  <button
+    class="absolute right-5 top-4 cursor-pointer"
+    (click)="successService.setSuccessStatus(false)"
+  >
+    &times;
+  </button>
+</div>
