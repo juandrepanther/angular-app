@@ -4,6 +4,7 @@ import { ErrorService } from './error.service'
 import { User, UserRegisterResponse, UserType } from 'types'
 import { environment } from 'environments/environment.development'
 import { catchError, retry, tap, throwError } from 'rxjs'
+import { getToken, storeToken } from 'lib/utils'
 
 @Injectable({
   providedIn: 'root',
@@ -11,8 +12,6 @@ import { catchError, retry, tap, throwError } from 'rxjs'
 export class AuthService {
   http = inject(HttpClient)
   errorService = inject(ErrorService)
-
-  token: string | null = ''
 
   register({ email, password, username }: User) {
     return this.http
@@ -26,7 +25,7 @@ export class AuthService {
       .pipe(
         tap((response) => {
           console.log(response.user.token)
-          this.token = response.user.token
+          storeToken(response.user.token)
         }),
         catchError(this.errorHandler.bind(this)),
         retry(2),
@@ -36,18 +35,15 @@ export class AuthService {
   login({ email, password }: User) {
     return this.http
       .get<UserType>(environment.AUTH_API_URL + 'api/user', {
-        params: {
-          email,
-          password,
-        },
         headers: {
-          Authorization: `Token ${this.token}`,
+          Authorization: `Token ${getToken()}`,
         },
       })
       .pipe(
         tap((response) => {
           console.log(response, 'Logged successfully')
         }),
+        catchError(this.errorHandler.bind(this)),
       )
   }
 

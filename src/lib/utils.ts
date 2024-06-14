@@ -15,3 +15,11 @@ export const emptyProduct = {
   image: '',
   rating: { rate: 0, count: 0 },
 }
+
+export function storeToken(token: string) {
+  localStorage.setItem('token', token)
+}
+
+export function getToken() {
+  return localStorage.getItem('token')
+}
