@@ -1,23 +1,29 @@
 <section class="container my-16 flex h-[calc(100vh-8rem)] items-center justify-center md:mx-auto">
-  <form class="flex-col justify-center gap-4 p-4 text-center">
+  <form [formGroup]="form" class="flex-col justify-center gap-4 p-4 text-center">
     <div>
       <mat-form-field>
         <mat-label>Username</mat-label>
-        <input matInput placeholder="Username" />
+        <input formControlName="username" matInput placeholder="Username" />
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
         <mat-label>Email</mat-label>
-        <input type="email" matInput placeholder="Email" />
+        <input formControlName="email" type="email" matInput placeholder="Email" />
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
         <mat-label>Password</mat-label>
-        <input autocomplete="new-password" type="password" matInput placeholder="Password" />
+        <input
+          formControlName="password"
+          autocomplete="new-password"
+          type="password"
+          matInput
+          placeholder="Password"
+        />
       </mat-form-field>
     </div>
-    <app-button text="Register" [style]="'mat-flat-button'"></app-button>
+    <app-button (click)="register()" text="Register" [style]="'mat-flat-button'"></app-button>
   </form>
 </section>

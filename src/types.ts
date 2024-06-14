@@ -14,3 +14,23 @@ export interface Product {
 }
 
 export type BtnTypes = 'mat-flat-button' | 'mat-raised-button' | 'mat-stroked-button'
+
+export interface User {
+  username: string
+  email: string
+  password: string
+}
+
+export interface UserType {
+  user: User
+}
+
+export interface UserRegisterResponse {
+  user: {
+    email: string
+    token: string
+    username: string
+    bio: string
+    image: string | null
+  }
+}
