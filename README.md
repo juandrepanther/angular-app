@@ -32,6 +32,8 @@ Already build on Vercel: `https://angular-app-taupe.vercel.app/`
 - used `signals` instead of `@Input`
 - used `inject` instead of injecting them in the constructor
 
+- added `withViewTransitions()` for page smooth transitions
+
 ## Notes
 
 - to generate new components and skipping the tests, run `ng g c components/global-error --skip-tests`
