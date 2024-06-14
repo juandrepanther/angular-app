@@ -8,11 +8,16 @@
     </div>
     <div>
       <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput placeholder="Email" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
         <mat-label>Password</mat-label>
         <input autocomplete="new-password" type="password" matInput placeholder="Password" />
       </mat-form-field>
     </div>
-    <app-button text="Login" [style]="'mat-stroked-button'"></app-button>
-    <app-button [goTo]="'/register'" text="Register" [style]="'mat-flat-button'"></app-button>
+    <app-button text="Register" [style]="'mat-flat-button'"></app-button>
   </form>
 </section>

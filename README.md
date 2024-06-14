@@ -34,6 +34,10 @@ Already build on Vercel: `https://angular-app-taupe.vercel.app/`
 
 - added `withViewTransitions()` for page smooth transitions
 
+## Authentication & Authorization
+
+For backend training purposes has been taken [RealWorld](https://realworld-docs.netlify.app/docs/specs/backend-specs/endpoints#registration) free service
+
 ## Notes
 
 - to generate new components and skipping the tests, run `ng g c components/global-error --skip-tests`
